@@ -22,31 +22,31 @@ if [ ! -e "${BITCOIN_CONF}" ]; then
 server=1
 
 # You must set rpcuser and rpcpassword to secure the JSON-RPC api
-rpcuser=${BTC_RPCUSER:-btc}
-rpcpassword=${BTC_RPCPASSWORD:-changemeplz}
+rpcuser=${RPCUSER:-btc}
+rpcpassword=${RPCPASSWORD:-changemeplz}
 
 # How many seconds bitcoin will wait for a complete RPC HTTP request.
 # after the HTTP connection is established.
-rpcclienttimeout=${BTC_RPCCLIENTTIMEOUT:-30}
+rpcclienttimeout=${RPCCLIENTTIMEOUT:-30}
 
-rpcallowip=${BTC_RPCALLOWIP:-::/0}
+rpcallowip=${RPCALLOWIP:-::/0}
 
 # Listen for RPC connections on this TCP port:
-rpcport=${BTC_RPCPORT:-8332}
+rpcport=${RPCPORT:-8332}
 
 # Print to console (stdout) so that "docker logs bitcoind" prints useful
 # information.
-printtoconsole=${BTC_PRINTTOCONSOLE:-1}
+printtoconsole=${PRINTTOCONSOLE:-1}
 
 # We probably don't want a wallet.
-disablewallet=${BTC_DISABLEWALLET:-1}
+disablewallet=${DISABLEWALLET:-0}
 
 # Enable an on-disk txn index. Allows use of getrawtransaction for txns not in
 # mempool.
-txindex=${BTC_TXINDEX:-0}
+txindex=${TXINDEX:-1}
 
 # Run on the test network instead of the real bitcoin network.
-testnet=${BTC_TESTNET:-0}
+testnet=${TESTNET:-1}
 
 # Set database cache size in MiB
 dbcache=${BTC_DBCACHE:-512}
